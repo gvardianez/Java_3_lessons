@@ -65,10 +65,10 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
     }
 
     public boolean pour(Box<T> box, int start, int end) {
-        List<T> partList = new ArrayList<>();
-        for (int i = start; i < end; i++) {
-            partList.add(this.listOfFruit.get(i));
-        }
+        List<T> partList = this.listOfFruit.subList(start,end);
+//        for (int i = start; i < end; i++) {
+//            partList.add(this.listOfFruit.get(i));
+//        }
         if (!(box.varieties.size() == 0)) {
             List<Enum<? extends Varieties>> enums = new ArrayList<>();
             partList.forEach(a -> enums.add(a.getVariety()));
@@ -90,7 +90,9 @@ public class Box<T extends Fruit> implements Comparable<Box<?>> {
             tempPrice += t.getTotalPrice();
         }
         box.listOfFruit.addAll(partList);
-        this.listOfFruit.removeAll(partList);
+//        this.listOfFruit.removeAll(partList);
+//        partList.forEach(listOfFruit::remove);
+        partList.clear();
         box.currentWeight += tempWeight;
         this.currentWeight -= tempWeight;
         box.price += tempPrice;

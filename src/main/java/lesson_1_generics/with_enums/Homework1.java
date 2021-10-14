@@ -38,6 +38,8 @@ public class Homework1 {
         System.out.println("------------------------------------------");
         System.out.println(box2);
         System.out.println(box3);
+        box2.add(gala);
+        System.out.println(box2);
         box2.pour(box3, 0, 1);
         System.out.println("-------------------------------------------");
         System.out.println(box2);
@@ -47,7 +49,7 @@ public class Homework1 {
         boxListOne.add(box2);
         boxListOne.add(box3);
         Collections.sort(boxListOne);
-        System.out.println(boxListOne);
+//        System.out.println(boxListOne);
         Example<Integer> integerExample = new Example<>(); //это из твоего примера из лекции, так то все работает нормально, но ошибку в рантайме я все же получил, вызвав метод getClass:)
 //      integerExample.getArray().getClass();
     }
